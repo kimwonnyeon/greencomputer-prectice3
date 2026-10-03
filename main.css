@@ -1,30 +1,271 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Noto Sans KR", sans-serif;
+    background-color: #f5f7f6;
+    color: #333;
+}
+
 a {
     text-decoration: none;
     color: #333;
 }
+
+
 /* 전체 레이아웃 */
-.wrap{
-    width: 700px;
+.wrap {
+    width: 100%;
+    max-width: 1200px;
     margin: auto;
-    background-color:white;
+    background-color: white;
 }
-/* 상단 */
-header{
+
+
+/* =========================
+   상단
+========================= */
+
+header {
     height: 100px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 0 40px;
+
+    background-color: white;
 }
-header a{
+
+header .logo {
     margin: 10px;
+
+    font-size: 26px;
+    font-weight: bold;
+
+    color: #26352f;
+
+    transition: 0.3s;
 }
-/* main */
+
+/* 로고 hover */
+header .logo:hover {
+    color: #4caa91;
+}
+
+
+/* 상단 메뉴 */
+
+header nav {
+    display: flex;
+    gap: 8px;
+}
+
+header nav a {
+    padding: 12px 18px;
+
+    border-radius: 6px;
+
+    color: #333;
+
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+/* 메뉴 hover */
+header nav a:hover {
+    background-color: #4caa91;
+    color: white;
+}
+
+
+/* =========================
+   main
+========================= */
+
+
 /* 베너 */
-.intro{
+
+.intro {
+    min-height: 500px;
+
     background-image: url(images/back.png);
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    padding: 50px;
+}
+
+.intro-content {
+    color: #17233a;
+}
+
+.intro h1 {
+    font-size: 44px;
+    line-height: 1.4;
+
+    margin-bottom: 25px;
+}
+
+.intro p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* 자세히 보기 버튼 */
+
+.intro-button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 13px 25px;
+
+    border-radius: 7px;
+
+    background-color: #4caa91;
+    color: white;
+
+    transition:
+        background-color 0.3s,
+        transform 0.3s;
+}
+
+.intro-button:hover {
+    background-color: #267b67;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   본문
+========================= */
+
+.content-section {
+    display: flex;
+    align-items: center;
+
+    gap: 50px;
+
+    padding: 70px 50px;
+}
+
+.content-section.reverse {
+    flex-direction: row-reverse;
+}
+
+
+/* 이미지 영역 */
+
+.image-box {
+    width: 55%;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.image-box img {
+    width: 100%;
+    height: 280px;
+
+    display: block;
+
+    object-fit: cover;
+
+    /*
+       마우스를 올리는 순간부터
+       0.3초 동안 확대 + 흐림
+    */
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.06);
+    filter: blur(3px);
+}
+
+
+/* 본문 글 */
+
+.section-text {
+    flex: 1;
+}
+
+.section-text h2 {
+    margin-bottom: 20px;
+
+    font-size: 28px;
+
+    color: #17233a;
+}
+
+.section-text p {
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #59677a;
+}
+
+
+/* =========================
+   하단
+========================= */
+
+footer {
+    padding: 40px 50px;
+
+    background-color: #17233a;
+
+    color: white;
+
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 20px;
+
+    color: #aeb8c7;
+
+    font-size: 14px;
+}
+
+footer nav {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 22px;
+}
+
+footer nav a {
+    color: #d7deea;
+
+    transition: 0.3s;
+}
+
+/* Footer 메뉴 hover */
+
+footer nav a:hover {
+    color: #4caa91;
 }
